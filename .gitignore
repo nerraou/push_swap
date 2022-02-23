@@ -1,0 +1,7 @@
+# vscode
+.vscode
+
+# out
+*.o
+*.out
+*.a
