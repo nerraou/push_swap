@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_new.c                                         :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 15:57:56 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 14:26:33 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/24 14:28:29 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/24 17:22:41 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-t_list *list_new(void)
+void ra(t_list *list)
 {
-	t_list *new_list;
+	if (list->size <= 1)
+		return;
+	int data;
 
-	new_list = (t_list *)malloc(sizeof(t_list));
-	if (!new_list)
-		return (NULL);
-	new_list->head = NULL;
-	new_list->tail = NULL;
-	new_list->size = 0;
-	return (new_list);
+	data = list_shift(list);
+	add_back(list, data);
 }

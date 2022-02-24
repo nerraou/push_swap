@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_new.c                                         :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 15:57:56 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 14:26:33 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/24 13:16:34 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/24 13:55:00 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-t_list *list_new(void)
+void sa(t_list *list)
 {
-	t_list *new_list;
+	if (list->size <= 1)
+		return;
+	t_element *tmp;
 
-	new_list = (t_list *)malloc(sizeof(t_list));
-	if (!new_list)
-		return (NULL);
-	new_list->head = NULL;
-	new_list->tail = NULL;
-	new_list->size = 0;
-	return (new_list);
+	tmp = list->head;
+	if (tmp != NULL && tmp->next != NULL)
+		ft_swap(&tmp->data, &tmp->next->data);
 }

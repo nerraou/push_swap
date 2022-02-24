@@ -3,9 +3,14 @@ CFLAGS = -Wall -Wextra -Werror
 HEADERS = ./includes/list.h
 SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
-	  ./src/list/add_after.c \
 	  ./src/list/add_back.c \
 	  ./src/list/list_new.c \
+	  ./src/list/ft_swap.c \
+	  ./src/list/sa.c \
+	  ./src/list/ra.c \
+	  ./src/list/rra.c \
+	  ./src/list/list_pop.c \
+	  ./src/list/list_shift.c \
 	  main.c
 
 OBJ = $(SRC:.c=.o)

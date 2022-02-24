@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_new.c                                         :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 15:57:56 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 14:26:33 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/24 17:27:01 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/24 17:28:08 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-t_list *list_new(void)
+void rra(t_list *list)
 {
-	t_list *new_list;
+	if (list->size <= 1)
+		return;
+	int data;
 
-	new_list = (t_list *)malloc(sizeof(t_list));
-	if (!new_list)
-		return (NULL);
-	new_list->head = NULL;
-	new_list->tail = NULL;
-	new_list->size = 0;
-	return (new_list);
+	data = list_pop(list);
+	add_front(list, data);
 }

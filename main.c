@@ -2,20 +2,22 @@
 
 void print_list(t_list *list)
 {
-	while (list->head != NULL)
+	t_element *elem;
+
+	elem = list->head;
+	while (elem != NULL)
 	{
-		printf("[]%d\n", list->head->data);
-		list->head = list->head->next;
+		printf("[]%d\n", elem->data);
+		elem = elem->next;
 	}
 }
-
 
 void print_rev(t_list *list)
 {
 	t_element *cur;
 
 	cur = list->tail;
-	while(cur != NULL)
+	while (cur != NULL)
 	{
 		printf("[]%d\n", cur->data);
 		cur = cur->prev;
@@ -48,6 +50,8 @@ int main()
 	//last = last_elem(head);
 	print_list(head);
 	printf("\n----------\n");
-	print_rev(head);
+	rra(head);
+	print_list(head);
+	//print_rev(head);
 	return 0;
 }

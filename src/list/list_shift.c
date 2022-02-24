@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_new.c                                         :+:      :+:    :+:   */
+/*   list_shift.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 15:57:56 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 14:26:33 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/24 16:19:18 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/24 17:40:31 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-t_list *list_new(void)
+int list_shift(t_list *list)
 {
-	t_list *new_list;
+	t_element *first;
+	int data;
 
-	new_list = (t_list *)malloc(sizeof(t_list));
-	if (!new_list)
-		return (NULL);
-	new_list->head = NULL;
-	new_list->tail = NULL;
-	new_list->size = 0;
-	return (new_list);
+	first = list->head;
+	data = first->data;
+	list->head = first->next;
+	free(first);
+	list->head->prev = NULL;
+	list->size--;
+	return (data);
 }
