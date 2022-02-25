@@ -7,8 +7,16 @@ SRC = ./src/list/add_front.c \
 	  ./src/list/list_new.c \
 	  ./src/list/ft_swap.c \
 	  ./src/list/sa.c \
+	  ./src/list/sb.c \
+	  ./src/list/ss.c \
 	  ./src/list/ra.c \
+	  ./src/list/rb.c \
+	  ./src/list/rr.c \
 	  ./src/list/rra.c \
+	  ./src/list/rrb.c \
+	  ./src/list/rrr.c \
+	  ./src/list/pa.c \
+	  ./src/list/pb.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
 	  main.c

@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 17:30:53 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/02/25 15:58:27 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,20 @@ typedef struct s_list
 t_element *node_new(int value);
 t_list *list_new(void);
 
-void rra(t_list *list);
 void sa(t_list *list);
+void sb(t_list *list);
+void ss(t_list *list_a, t_list *list_b);
+
 void ra(t_list *list);
+void rb(t_list *list);
+void rr(t_list *list_a, t_list *list_b);
+
+void rra(t_list *list);
+void rrb(t_list *list);
+void rrr(t_list *list_a, t_list *list_b);
+
+void pa(t_list *head_a, t_list *head_b);
+void pb(t_list *head_a, t_list *head_b);
 
 int list_shift(t_list *list);
 int list_pop(t_list *list);

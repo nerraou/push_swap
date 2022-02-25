@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_pop.c                                         :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:17:17 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/25 15:21:42 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/25 15:51:18 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/25 15:53:23 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-int list_pop(t_list *list)
+void rr(t_list *list_a, t_list *list_b)
 {
-	int data;
-	t_element *last;
-
-	last = list->tail;
-	data = last->data;
-	list->tail = last->prev;
-	free(last);
-	list->size--;
-	if (list->size != 0)
-		list->tail->next = NULL;
-	else
-		list->head = NULL;
-	return (data);
+	ra(list_a);
+	rb(list_b);
 }

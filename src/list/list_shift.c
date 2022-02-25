@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:19:18 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 17:40:31 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/02/25 15:19:13 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int list_shift(t_list *list)
 	data = first->data;
 	list->head = first->next;
 	free(first);
-	list->head->prev = NULL;
 	list->size--;
+	if (list->size != 0)
+		list->head->prev = NULL;
+	else
+		list->tail = NULL;
 	return (data);
 }

@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:15:01 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/23 17:50:52 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/02/25 14:37:56 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void add_back(t_list *list, int new_data)
 
 	node = node_new(new_data);
 	if (!node)
-		return ;
-	if(!list->head)
+		return;
+	if (!list->head)
 		list->head = node;
-	if(!list->tail)
+	if (!list->tail)
 		list->tail = node;
 	else
 	{
@@ -29,4 +29,5 @@ void add_back(t_list *list, int new_data)
 		node->prev = list->tail;
 		list->tail = node;
 	}
+	list->size++;
 }
