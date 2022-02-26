@@ -1,6 +1,6 @@
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-HEADERS = ./includes/list.h
+HEADERS = ./includes/list.h ./includes/get_next_line.h ./includes/checker.h
 SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
 	  ./src/list/add_back.c \
@@ -19,6 +19,15 @@ SRC = ./src/list/add_front.c \
 	  ./src/list/pb.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
+	  ./src/gnl/get_next_line.c \
+	  ./src/gnl/get_next_line_utils.c \
+	  ./src/checker/ft_atoi.c \
+	  ./src/checker/ft_isdigit.c \
+	  ./src/checker/is_int.c \
+	  ./src/checker/is_sorted.c \
+	  ./src/checker/is_empty.c \
+	  ./src/checker/is_action.c \
+	  ./src/checker/ft_strcmp.c \
 	  main.c
 
 OBJ = $(SRC:.c=.o)
