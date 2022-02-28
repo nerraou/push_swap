@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_int.c                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 10:35:04 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/26 13:58:56 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/28 14:23:08 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/28 15:34:13 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "common.h"
 
-int is_int(const char *str)
+void ft_putstr(const char *str)
 {
 	int i;
 
-	// TODO: handle -12 and +123
 	i = 0;
-	if (!str[i])
-		return (0);
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]) || str[i] != '-' || str[i] != '+')
-			return (0);
+		write(1, &str[i], 1);
 		i++;
 	}
-	return (1);
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 10:23:01 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/28 15:01:03 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/28 16:57:00 by nerraou           #+#    #+#             */
+/*   Updated: 2022/02/28 17:07:02 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-#define CHECKER_H
+#include "common.h"
 
-#include "list.h"
-
-int is_empty(t_list *list);
-int is_sorted(t_list *list);
-char **set_action(void);
-int is_action(const char *str);
-int ft_strcmp(const char *str1, const char *str2);
-char *ft_strdup(const char *s);
-
-void apply(const char *str, t_list *list_a, t_list *list_b);
-
-#endif
+void ft_exit(const char *str)
+{
+	ft_putstr(str);
+	write(1, "\n", 1);
+	exit(1);
+}

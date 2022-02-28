@@ -1,6 +1,11 @@
 NAME = push_swap
+B_NAME = checker
 CFLAGS = -Wall -Wextra -Werror
-HEADERS = ./includes/list.h ./includes/get_next_line.h ./includes/checker.h
+HEADERS = ./includes/list.h \
+		./includes/get_next_line.h \
+		./includes/checker.h \
+		includes/common.h
+
 SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
 	  ./src/list/add_back.c \
@@ -19,32 +24,44 @@ SRC = ./src/list/add_front.c \
 	  ./src/list/pb.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
-	  ./src/gnl/get_next_line.c \
+	  ./src/common/ft_atoi.c \
+	  ./src/common/ft_isdigit.c \
+	  ./src/common/is_int.c \
+	  ./src/common/ft_putstr.c \
+	  ./src/common/ft_exit.c 
+
+B_SRC = ./src/gnl/get_next_line.c \
 	  ./src/gnl/get_next_line_utils.c \
-	  ./src/checker/ft_atoi.c \
-	  ./src/checker/ft_isdigit.c \
-	  ./src/checker/is_int.c \
 	  ./src/checker/is_sorted.c \
 	  ./src/checker/is_empty.c \
 	  ./src/checker/is_action.c \
 	  ./src/checker/ft_strcmp.c \
-	  main.c
+	  ./src/checker/apply.c
 
 OBJ = $(SRC:.c=.o)
+
+B_OBJ = $(B_SRC:.c=.o) $(OBJ) 
+
 INCLUDES_PATH = -I./includes/
 
-all: $(NAME)
+all: push_swap.o $(NAME)
+
+bonus: checker.o $(B_NAME)
 
 %.o: %.c $(HEADERS)
 	gcc $(CFLAGS) $(INCLUDES_PATH) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc  -o $(NAME) $^ $(INCLUDES_PATH)
+	gcc  -o $(NAME) push_swap.c $^ $(INCLUDES_PATH)
+
+$(B_NAME): $(B_OBJ)
+	gcc  -o $(B_NAME) checker.c $^ $(INCLUDES_PATH)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) push_swap.o
+	rm -f $(B_OBJ)	checker.o
 
 fclean: clean
 	rm -f $(NAME)
-
+	rm -f $(B_NAME)
 re: fclean all
