@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common.h                                           :+:      :+:    :+:   */
+/*   lis.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 10:11:40 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:12:50 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/02 10:42:11 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/02 16:06:08 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMON_H
-#define COMMON_H
+#ifndef LIS_H
+#define LIS_H
 
-#include <unistd.h>
 #include <stdlib.h>
-#include "list.h"
 
-int is_int(const char *str);
-int ft_atoi(const char *str);
-int ft_isdigit(int c);
-int is_dup(int ac, char *av[]);
-int ft_strcmp(const char *str1, const char *str2);
+int max_index(int arr[], int n);
+int *set_array_value(int size, int value);
+int *lis_array(int *sub_s, int *arr, int *length, int size);
+int *ft_lis(int *arr, int size);
 
-void fill_list(t_list *list, int ac, char *av[]);
-void ft_exit(const char *str);
-void ft_putstr(const char *str);
+void check_and_set(int *arr, int *sub_s, int *length, int size);
+void free_all(int *sub_s, int *arr, int *lenght);
 
 #endif

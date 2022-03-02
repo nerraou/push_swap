@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common.h                                           :+:      :+:    :+:   */
+/*   ft_lis.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 10:11:40 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:12:50 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/02 12:26:16 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/02 14:59:05 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMON_H
-#define COMMON_H
+#include "lis.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "list.h"
+int *ft_lis(int *arr, int size)
+{
 
-int is_int(const char *str);
-int ft_atoi(const char *str);
-int ft_isdigit(int c);
-int is_dup(int ac, char *av[]);
-int ft_strcmp(const char *str1, const char *str2);
+	int *length;
+	int *sub_s;
+	int *lis;
 
-void fill_list(t_list *list, int ac, char *av[]);
-void ft_exit(const char *str);
-void ft_putstr(const char *str);
-
-#endif
+	length = set_array_value(size, 1);
+	if (!length)
+	{
+		free(arr);
+		exit(1);
+	}
+	sub_s = set_array_value(size, 0);
+	if (!sub_s)
+	{
+		free_all(sub_s, arr, length);
+		exit(1);
+	}
+	check_and_set(arr, sub_s, length, size);
+	lis = lis_array(sub_s, arr, length, size);
+	free_all(sub_s, arr, length);
+	return (lis);
+}

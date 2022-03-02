@@ -43,9 +43,11 @@ int main(int ac, char *av[])
 
 	list_a = list_new();
 	list_b = list_new();
-	if (ac > 2)
+	if (ac >= 2)
 	{
 		//check the dup
 		fill_list(list_a, ac, av);
+		print_list(list_a);
 	}
+	return 0;
 }

@@ -4,7 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 HEADERS = ./includes/list.h \
 		./includes/get_next_line.h \
 		./includes/checker.h \
-		includes/common.h
+		./includes/common.h \
+		./includes/lis.h 
 
 SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
@@ -22,20 +23,29 @@ SRC = ./src/list/add_front.c \
 	  ./src/list/rrr.c \
 	  ./src/list/pa.c \
 	  ./src/list/pb.c \
+	  ./src/lis/max_index.c \
+	  ./src/lis/set_array_value.c \
+	  ./src/lis/lis_array.c \
+	  ./src/lis/ft_lis.c \
+	  ./src/lis/check_and_set.c \
+	  ./src/lis/free_all.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
 	  ./src/common/ft_atoi.c \
 	  ./src/common/ft_isdigit.c \
 	  ./src/common/is_int.c \
 	  ./src/common/ft_putstr.c \
-	  ./src/common/ft_exit.c 
+	  ./src/common/ft_exit.c \
+	  ./src/common/fill_list.c \
+	  ./src/common/ft_strcmp.c \
+	  ./src/common/is_dup.c 
+
 
 B_SRC = ./src/gnl/get_next_line.c \
 	  ./src/gnl/get_next_line_utils.c \
 	  ./src/checker/is_sorted.c \
 	  ./src/checker/is_empty.c \
 	  ./src/checker/is_action.c \
-	  ./src/checker/ft_strcmp.c \
 	  ./src/checker/apply.c
 
 OBJ = $(SRC:.c=.o)

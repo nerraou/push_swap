@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common.h                                           :+:      :+:    :+:   */
+/*   set_array_value.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 10:11:40 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:12:50 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/02 11:30:52 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/02 11:31:29 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMON_H
-#define COMMON_H
+#include "lis.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "list.h"
+int *set_array_value(int size, int value)
+{
+	int *arr;
+	int i;
 
-int is_int(const char *str);
-int ft_atoi(const char *str);
-int ft_isdigit(int c);
-int is_dup(int ac, char *av[]);
-int ft_strcmp(const char *str1, const char *str2);
-
-void fill_list(t_list *list, int ac, char *av[]);
-void ft_exit(const char *str);
-void ft_putstr(const char *str);
-
-#endif
+	i = 0;
+	arr = (int *)malloc(sizeof(int) * size);
+	if (!arr)
+		return (0);
+	while (i <= size)
+	{
+		arr[i] = value;
+		i++;
+	}
+	return (arr);
+}

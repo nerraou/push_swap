@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common.h                                           :+:      :+:    :+:   */
+/*   check_and_set.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 10:11:40 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:12:50 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/02 12:24:19 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/02 12:24:43 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMON_H
-#define COMMON_H
+#include "lis.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "list.h"
+void check_and_set(int *arr, int *sub_s, int *length, int size)
+{
+	int i;
+	int j;
 
-int is_int(const char *str);
-int ft_atoi(const char *str);
-int ft_isdigit(int c);
-int is_dup(int ac, char *av[]);
-int ft_strcmp(const char *str1, const char *str2);
-
-void fill_list(t_list *list, int ac, char *av[]);
-void ft_exit(const char *str);
-void ft_putstr(const char *str);
-
-#endif
+	i = 1;
+	while (i < size)
+	{
+		j = 0;
+		while (j < i)
+		{
+			if (arr[j] < arr[i] && length[i] <= 1 + length[j])
+			{
+				length[i] = 1 + length[j];
+				sub_s[i] = j;
+			}
+			j++;
+		}
+		i++;
+	}
+}
