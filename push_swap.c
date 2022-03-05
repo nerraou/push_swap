@@ -49,5 +49,6 @@ int main(int ac, char *av[])
 		fill_list(list_a, ac, av);
 		print_list(list_a);
 	}
+	//printf("\n test \n");
 	return 0;
 }

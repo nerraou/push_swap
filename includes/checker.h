@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 10:23:01 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:10:02 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/05 15:36:20 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CHECKER_H
 
 #include "list.h"
+#include "common.h"
 
 int is_empty(t_list *list);
 int is_sorted(t_list *list);

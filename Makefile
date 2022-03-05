@@ -7,7 +7,8 @@ HEADERS = ./includes/list.h \
 		./includes/common.h \
 		./includes/lis.h 
 
-SRC = ./src/list/add_front.c \
+
+LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
 	  ./src/list/add_back.c \
 	  ./src/list/list_new.c \
@@ -30,8 +31,9 @@ SRC = ./src/list/add_front.c \
 	  ./src/lis/check_and_set.c \
 	  ./src/lis/free_all.c \
 	  ./src/list/list_pop.c \
-	  ./src/list/list_shift.c \
-	  ./src/common/ft_atoi.c \
+	  ./src/list/list_shift.c 
+
+COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/ft_isdigit.c \
 	  ./src/common/is_int.c \
 	  ./src/common/ft_putstr.c \
@@ -40,36 +42,41 @@ SRC = ./src/list/add_front.c \
 	  ./src/common/ft_strcmp.c \
 	  ./src/common/is_dup.c 
 
+SRC =  push_swap.c
+
+
 
 B_SRC = ./src/gnl/get_next_line.c \
 	  ./src/gnl/get_next_line_utils.c \
 	  ./src/checker/is_sorted.c \
 	  ./src/checker/is_empty.c \
 	  ./src/checker/is_action.c \
-	  ./src/checker/apply.c
+	  ./src/checker/apply.c \
+	  checker.c 
 
-OBJ = $(SRC:.c=.o)
 
-B_OBJ = $(B_SRC:.c=.o) $(OBJ) 
+OBJ = $(SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o)
+
+B_OBJ = $(B_SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o)
 
 INCLUDES_PATH = -I./includes/
 
-all: push_swap.o $(NAME)
+all:  $(NAME)
 
-bonus: checker.o $(B_NAME)
+bonus: $(B_NAME)
 
 %.o: %.c $(HEADERS)
 	gcc $(CFLAGS) $(INCLUDES_PATH) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc  -o $(NAME) push_swap.c $^ $(INCLUDES_PATH)
+	gcc  -o $(NAME)  $^ $(INCLUDES_PATH)
 
 $(B_NAME): $(B_OBJ)
-	gcc  -o $(B_NAME) checker.c $^ $(INCLUDES_PATH)
+	gcc -o $(B_NAME) $^ $(INCLUDES_PATH)
 
 clean:
 	rm -f $(OBJ) push_swap.o
-	rm -f $(B_OBJ)	checker.o
+	rm -f $(B_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

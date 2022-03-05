@@ -54,15 +54,22 @@ int main(int ac, char *av[])
 				ft_exit("Error");
 			apply(line, list_a, list_b);
 			free(line);
+			// printf("1 - ------ list a\n");
+			// print_list(list_a);
+			// printf("1 - ------ list b\n");
+			// print_list(list_b);
 			line = get_next_line(0);
 		}
 		if (!is_empty(list_b) || !is_sorted(list_a))
+		{
+			printf("------ list a\n");
+			print_list(list_a);
+			printf("------ list b\n");
+			print_list(list_b);
 			ft_exit("KO");
+		}
 		ft_putstr("OK\n");
 	}
-	printf("------ list a\n");
-	print_list(list_a);
-	printf("------ list b\n");
-	print_list(list_b);
+	//printf("\n test \n");
 	return 0;
 }
