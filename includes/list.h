@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/25 15:58:27 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/07 14:54:34 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_element
 {
@@ -50,8 +51,10 @@ void pb(t_list *head_a, t_list *head_b);
 
 int list_shift(t_list *list);
 int list_pop(t_list *list);
+int is_exist(int *arr, int size, int elem);
 
 void ft_swap(int *a, int *b);
 void add_front(t_list *list, int new_data);
 void add_back(t_list *list, int new_data);
+void set_list_b(t_list *list_a, t_list *list_b, int *lis, int len);
 #endif

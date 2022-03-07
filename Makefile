@@ -25,13 +25,19 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/pa.c \
 	  ./src/list/pb.c \
 	  ./src/lis/max_index.c \
+	  ./src/lis/min_index.c \
 	  ./src/lis/set_array_value.c \
 	  ./src/lis/lis_array.c \
+	  ./src/lis/list_to_array.c \
+	  ./src/lis/set_tmp.c \
 	  ./src/lis/ft_lis.c \
 	  ./src/lis/check_and_set.c \
 	  ./src/lis/free_all.c \
 	  ./src/list/list_pop.c \
-	  ./src/list/list_shift.c 
+	  ./src/list/list_shift.c \
+	  ./src/list/set_list_b.c \
+	  ./src/list/is_exist.c 
+
 
 COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/ft_isdigit.c \
