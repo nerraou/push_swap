@@ -44,6 +44,7 @@ int main(int ac, char *av[])
 	int *arr;
 	int *tmp;
 	int *lis;
+	int **pos;
 
 	list_a = list_new();
 	list_b = list_new();
@@ -57,12 +58,20 @@ int main(int ac, char *av[])
 		int len;
 		lis = ft_lis(tmp, &len, list_a->size);
 		int i = 0;
-		while (i < len)
-		{
-			printf("[lis]%d\n", lis[i++]);
-		}
-
+		int j;
 		set_list_b(list_a, list_b, lis, len);
+		pos = set_positions(list_a, list_b);
+		while (i < list_b->size)
+		{
+			j = 0;
+			while (j < 2)
+			{
+				printf("[pos]%d  ", pos[i][j]);
+				j++;
+			}
+			printf("\n");
+			i++;
+		}
 
 		//print_list(list_b);
 	}

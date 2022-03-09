@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/07 14:54:34 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/09 18:41:54 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,16 @@ void pb(t_list *head_a, t_list *head_b);
 int list_shift(t_list *list);
 int list_pop(t_list *list);
 int is_exist(int *arr, int size, int elem);
+int max_list_pos(t_list *list);
+int min_list_pos(t_list *list);
+int inst_to_pos(t_list *list_a, int data);
+int inst_to_top(int pos, int size);
 
 void ft_swap(int *a, int *b);
 void add_front(t_list *list, int new_data);
 void add_back(t_list *list, int new_data);
 void set_list_b(t_list *list_a, t_list *list_b, int *lis, int len);
+
+int **set_positions(t_list *list_a, t_list *list_b);
+
 #endif

@@ -36,8 +36,12 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
 	  ./src/list/set_list_b.c \
-	  ./src/list/is_exist.c 
-
+	  ./src/list/is_exist.c \
+	  ./src/list/set_positions.c \
+	  ./src/list/inst_to_top.c \
+	  ./src/list/inst_to_pos.c \
+	  ./src/list/max_list_pos.c \
+	  ./src/list/min_list_pos.c 
 
 COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/ft_isdigit.c \
