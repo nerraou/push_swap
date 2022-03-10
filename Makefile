@@ -5,8 +5,26 @@ HEADERS = ./includes/list.h \
 		./includes/get_next_line.h \
 		./includes/checker.h \
 		./includes/common.h \
-		./includes/lis.h 
+		./includes/lis.h \
+		./includes/lib.h \
 
+COMMON_SRC = ./src/common/ft_atoi.c \
+	  ./src/common/ft_isdigit.c \
+	  ./src/common/is_int.c \
+	  ./src/common/ft_exit.c \
+	  ./src/common/fill_list.c \
+	  ./src/common/ft_strcmp.c \
+	  ./src/common/is_dup.c 
+
+LIS_SRC = ./src/lis/max_index.c \
+	  ./src/lis/min_index.c \
+	  ./src/lis/set_array_value.c \
+	  ./src/lis/lis_array.c \
+	  ./src/lis/list_to_array.c \
+	  ./src/lis/set_tmp.c \
+	  ./src/lis/ft_lis.c \
+	  ./src/lis/free_all.c \
+	  ./src/lis/check_and_set.c 
 
 LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
@@ -24,15 +42,6 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/rrr.c \
 	  ./src/list/pa.c \
 	  ./src/list/pb.c \
-	  ./src/lis/max_index.c \
-	  ./src/lis/min_index.c \
-	  ./src/lis/set_array_value.c \
-	  ./src/lis/lis_array.c \
-	  ./src/lis/list_to_array.c \
-	  ./src/lis/set_tmp.c \
-	  ./src/lis/ft_lis.c \
-	  ./src/lis/check_and_set.c \
-	  ./src/lis/free_all.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
 	  ./src/list/set_list_b.c \
@@ -41,19 +50,16 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/inst_to_top.c \
 	  ./src/list/inst_to_pos.c \
 	  ./src/list/max_list_pos.c \
-	  ./src/list/min_list_pos.c 
-
-COMMON_SRC = ./src/common/ft_atoi.c \
-	  ./src/common/ft_isdigit.c \
-	  ./src/common/is_int.c \
-	  ./src/common/ft_putstr.c \
-	  ./src/common/ft_exit.c \
-	  ./src/common/fill_list.c \
-	  ./src/common/ft_strcmp.c \
-	  ./src/common/is_dup.c 
+	  ./src/list/min_list_pos.c \
+	  ./src/list/element.c \
+	  ./src/list/best_element.c \
+	  ./src/list/move_be.c \
+	  ./src/lib/ft_abs.c \
+	  ./src/lib/ft_min.c \
+	  ./src/lib/ft_putstr.c 
+	  
 
 SRC =  push_swap.c
-
 
 
 B_SRC = ./src/gnl/get_next_line.c \
@@ -65,7 +71,7 @@ B_SRC = ./src/gnl/get_next_line.c \
 	  checker.c 
 
 
-OBJ = $(SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o)
+OBJ = $(LIST_SRC:.c=.o) $(COMMON_SRC:.c=.o)  $(LIS_SRC:.c=.o) $(SRC:.c=.o)
 
 B_OBJ = $(B_SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o)
 

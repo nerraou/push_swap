@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_list_pos.c                                     :+:      :+:    :+:   */
+/*   best_element.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:57:55 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 16:21:37 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/10 11:05:36 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/10 15:57:36 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-int min_list_pos(t_list *list)
+int best_element(int **arr, int size)
 {
-	int min;
-	int pos;
-	int min_pos;
-	t_element *elm;
+	int i;
+	int b_elem;
+	int elem;
+	int b_index;
 
-	elm = list->head;
-	pos = 0;
-	min_pos = 0;
-	min = elm->data;
-	while (elm != NULL)
+	b_index = 0;
+	b_elem = 60000;
+	elem = 0;
+	i = 0;
+	while (i < size)
 	{
-		if (min > elm->data)
+		elem = element(arr[i]);
+		if (b_elem > elem)
 		{
-			min = elm->data;
-			min_pos = pos;
+			b_elem = elem;
+			b_index = i;
 		}
-		pos++;
-		elm = elm->next;
+		i++;
 	}
-	return (min_pos);
+	return (b_index);
 }

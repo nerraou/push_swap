@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_list_pos.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:57:55 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 16:21:37 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/28 14:23:08 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/10 17:17:22 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "lib.h"
 
-int min_list_pos(t_list *list)
+static int ft_strlen(const char *str)
 {
-	int min;
-	int pos;
-	int min_pos;
-	t_element *elm;
+	int i;
 
-	elm = list->head;
-	pos = 0;
-	min_pos = 0;
-	min = elm->data;
-	while (elm != NULL)
-	{
-		if (min > elm->data)
-		{
-			min = elm->data;
-			min_pos = pos;
-		}
-		pos++;
-		elm = elm->next;
-	}
-	return (min_pos);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void ft_putstr(const char *str)
+{
+	int len;
+
+	len = ft_strlen(str);
+	write(1, str, len);
 }

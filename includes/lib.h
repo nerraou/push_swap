@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_list_pos.c                                     :+:      :+:    :+:   */
+/*   lib.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:57:55 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 16:21:37 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/10 14:33:06 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/10 14:38:39 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#ifndef LIB_H
+#define LIB_H
 
-int min_list_pos(t_list *list)
-{
-	int min;
-	int pos;
-	int min_pos;
-	t_element *elm;
+#include <unistd.h>
 
-	elm = list->head;
-	pos = 0;
-	min_pos = 0;
-	min = elm->data;
-	while (elm != NULL)
-	{
-		if (min > elm->data)
-		{
-			min = elm->data;
-			min_pos = pos;
-		}
-		pos++;
-		elm = elm->next;
-	}
-	return (min_pos);
-}
+void ft_putstr(const char *str);
+int ft_min(int n1, int n2);
+int ft_abs(int num);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:52:07 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/09 19:15:06 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/10 18:29:55 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int max_list_pos(t_list *list)
 	t_element *elm;
 
 	elm = list->head;
-	max = 0;
+	max_pos = 0;
+	max = elm->data;
 	pos = 0;
 	while (elm != NULL)
 	{

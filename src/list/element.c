@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   element.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 14:23:08 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/28 15:34:13 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/10 12:21:50 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/10 14:16:04 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "list.h"
 
-void ft_putstr(const char *str)
+static int ft_max(int n1, int n2)
 {
-	int i;
+	int num1;
+	int num2;
+	num1 = ft_abs(n1);
+	num2 = ft_abs(n2);
+	if (num1 > num2)
+		return (num1);
+	return (num2);
+}
 
-	i = 0;
-	while (str[i])
+int element(int *arr)
+{
+	int elem;
+
+	if (arr[0] * arr[1] < 0)
+		elem = ft_abs(arr[0]) + ft_abs(arr[1]);
+	else
 	{
-		write(1, &str[i], 1);
-		i++;
+		elem = ft_min(arr[0], arr[1]) + (ft_max(arr[0], arr[1]) - ft_min(arr[0], arr[1]));
 	}
+	return (elem);
 }
