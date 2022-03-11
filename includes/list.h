@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 14:40:14 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/11 15:24:13 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void add_back(t_list *list, int new_data);
 void set_list_b(t_list *list_a, t_list *list_b, int *lis, int len);
 
 void move_be(t_list *list_a, t_list *list_b, int *be);
+void sort_three(t_list *list_a);
+void sort_five(t_list *list_a, t_list *list_b);
 
 int **set_positions(t_list *list_a, t_list *list_b);
 

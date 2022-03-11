@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:15:56 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 17:06:28 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/11 17:56:44 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void move_be(t_list *list_a, t_list *list_b, int *be)
 	// one of them is null
 	if (be[0] * be[1] == 0)
 	{
-		if (be[0] == 0)
+		if (be[0] == 0 && be[1] != 0)
 		{
 			i = ft_abs(be[1]);
 			if (be[1] < 0)
@@ -40,7 +40,7 @@ void move_be(t_list *list_a, t_list *list_b, int *be)
 				}
 			}
 		}
-		else if (be[1] == 0)
+		else if (be[1] == 0 && be[0] != 0)
 		{
 			i = ft_abs(be[0]);
 			if (be[0] < 0)

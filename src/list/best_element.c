@@ -6,11 +6,12 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:05:36 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 15:57:36 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/11 18:33:24 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
+#include <limits.h>
 
 int best_element(int **arr, int size)
 {
@@ -19,14 +20,13 @@ int best_element(int **arr, int size)
 	int elem;
 	int b_index;
 
-	b_index = 0;
-	b_elem = 60000;
-	elem = 0;
+	b_index = -1;
+	b_elem = INT_MAX;
 	i = 0;
 	while (i < size)
 	{
 		elem = element(arr[i]);
-		if (b_elem > elem)
+		if (elem < b_elem)
 		{
 			b_elem = elem;
 			b_index = i;

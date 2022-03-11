@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 10:23:01 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/05 15:36:20 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/11 16:43:15 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "common.h"
 
 int is_empty(t_list *list);
-int is_sorted(t_list *list);
+//int is_sorted(t_list *list);
 char **set_action(void);
 int is_action(const char *str);
 char *ft_strdup(const char *s);

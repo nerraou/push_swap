@@ -64,58 +64,74 @@ int main(int ac, char *av[])
 	{
 		//check the dup
 		fill_list(list_a, ac, av);
-		arr = list_to_array(list_a);
-		tmp = set_tmp(arr, list_a->size);
-
-		int len;
-		lis = ft_lis(tmp, &len, list_a->size);
-		// int i = 0;
-		// while (i < len)
-		// {
-		// 	printf("[lis]%d\n", lis[i++]);
-		// }
-
-		// int j;
-		set_list_b(list_a, list_b, lis, len);
-		// print_list(list_b);
-		// printf("\n ---------------------------------test a \n");
-		// print_list(list_a);
-		int best_elem = 0;
-		while (list_b->size)
+		if (is_sorted(list_a))
 		{
-
-			pos = set_positions(list_a, list_b);
-			best_elem = best_element(pos, list_b->size);
-			// printf("size B %d", list_b->size);
-			// print_positions(pos, list_b->size);
-			// printf("\nBEST_ELEM %d\n  ", best_elem);
-			move_be(list_a, list_b, pos[best_elem]);
-			// printf("\n ---------------------------------changes B  \n");
-			// print_list(list_b);
-			// printf("\n ---------------------------------changes A \n");
-			// print_list(list_a);
+			printf("\n");
+			return (0);
 		}
-		int min_pos = min_list_pos(list_a);
-		// printf("min pos %d", min_pos);
-		if (min_pos <= list_a->size / 2)
+		else if (list_a->size == 3)
 		{
-			while (min_pos--)
-			{
-				ra(list_a);
-				printf("ra\n");
-			}
+			sort_three(list_a);
+		}
+		else if (list_a->size == 5)
+		{
+			sort_five(list_a, list_b);
 		}
 		else
 		{
-			min_pos = list_a->size - min_pos;
-			while (min_pos--)
+			arr = list_to_array(list_a);
+			tmp = set_tmp(arr, list_a->size);
+
+			int len;
+			lis = ft_lis(tmp, &len, list_a->size);
+			// int i = 0;
+			// while (i < len)
+			// {
+			// 	printf("[lis]%d\n", lis[i++]);
+			// }
+
+			// int j;
+			set_list_b(list_a, list_b, lis, len);
+			// print_list(list_b);
+			// printf("\n ---------------------------------test a \n");
+			// print_list(list_a);
+			int best_elem = 0;
+			while (list_b->size)
 			{
-				rra(list_a);
-				printf("rra\n");
+
+				pos = set_positions(list_a, list_b);
+				best_elem = best_element(pos, list_b->size);
+				// printf("size B %d", list_b->size);
+				// print_positions(pos, list_b->size);
+				// printf("\nBEST_ELEM %d\n  ", best_elem);
+				move_be(list_a, list_b, pos[best_elem]);
+				// printf("\n ---------------------------------changes B  \n");
+				// print_list(list_b);
+				// printf("\n ---------------------------------changes A \n");
+				// print_list(list_a);
+			}
+			int min_pos = min_list_pos(list_a);
+			// printf("min pos %d", min_pos);
+			if (min_pos <= list_a->size / 2)
+			{
+				while (min_pos--)
+				{
+					ra(list_a);
+					ft_putstr("ra\n");
+				}
+			}
+			else
+			{
+				min_pos = list_a->size - min_pos;
+				while (min_pos--)
+				{
+					rra(list_a);
+					ft_putstr("rra\n");
+				}
 			}
 		}
 
-		// printf("\n ---------------------------------test a \n");
+		// printf("\n ---------------------------------test b \n");
 		// print_list(list_b);
 		// printf("\n ---------------------------------test  a\n");
 		// print_list(list_a);

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_list_b.c                                       :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 14:15:19 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 18:02:16 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/11 15:22:31 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/11 15:46:14 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-//could be used elsewhere
-static void dummy_function(t_list *list_a, int i)
+static void move_min(t_list *list_a)
 {
-	int j;
+	int min;
 
-	j = i;
-	if (i <= list_a->size / 2)
+	min = min_list_pos(list_a);
+	if (min <= 2)
 	{
-		while (j--)
+		while (min--)
 		{
 			ra(list_a);
 			ft_putstr("ra\n");
 		}
 	}
+
 	else
 	{
-		j = list_a->size - i;
-		while (j--)
+		min = list_a->size - min;
+		while (min--)
 		{
 			rra(list_a);
 			ft_putstr("rra\n");
@@ -37,27 +37,17 @@ static void dummy_function(t_list *list_a, int i)
 	}
 }
 
-void set_list_b(t_list *list_a, t_list *list_b, int *lis, int len)
+void sort_five(t_list *list_a, t_list *list_b)
 {
-	t_element *node;
-	int i;
-
-	node = list_a->head;
-	i = 0;
-	while (i < list_a->size)
-	{
-		if (!is_exist(lis, len, node->data))
-		{
-			dummy_function(list_a, i);
-			pb(list_a, list_b);
-			ft_putstr("pb\n");
-			node = list_a->head;
-			i = 0;
-		}
-		else
-		{
-			node = node->next;
-			i++;
-		}
-	}
+	move_min(list_a);
+	pb(list_a, list_b);
+	ft_putstr("pb\n");
+	move_min(list_a);
+	pb(list_a, list_b);
+	ft_putstr("pb\n");
+	sort_three(list_a);
+	pa(list_a, list_b);
+	ft_putstr("pa\n");
+	pa(list_a, list_b);
+	ft_putstr("pa\n");
 }

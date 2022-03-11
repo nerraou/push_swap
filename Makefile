@@ -14,6 +14,7 @@ COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/ft_exit.c \
 	  ./src/common/fill_list.c \
 	  ./src/common/ft_strcmp.c \
+	  ./src/common/is_sorted.c \
 	  ./src/common/is_dup.c 
 
 LIS_SRC = ./src/lis/max_index.c \
@@ -54,6 +55,8 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/element.c \
 	  ./src/list/best_element.c \
 	  ./src/list/move_be.c \
+	  ./src/list/sort_three.c \
+	  ./src/list/sort_five.c \
 	  ./src/lib/ft_abs.c \
 	  ./src/lib/ft_min.c \
 	  ./src/lib/ft_putstr.c 
@@ -64,7 +67,6 @@ SRC =  push_swap.c
 
 B_SRC = ./src/gnl/get_next_line.c \
 	  ./src/gnl/get_next_line_utils.c \
-	  ./src/checker/is_sorted.c \
 	  ./src/checker/is_empty.c \
 	  ./src/checker/is_action.c \
 	  ./src/checker/apply.c \
