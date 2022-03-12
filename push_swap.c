@@ -75,6 +75,7 @@ int main(int ac, char *av[])
 			int *tmp;
 			int *lis;
 			int **pos;
+			int size;
 
 			arr = list_to_array(list_a);
 			if (!arr)
@@ -85,6 +86,7 @@ int main(int ac, char *av[])
 				free(arr);
 				free_exit(&list_a, &list_b, 1);
 			}
+			free(arr);
 			int len;
 			lis = ft_lis(tmp, &len, list_a->size);
 			if (!lis)
@@ -97,13 +99,13 @@ int main(int ac, char *av[])
 			int best_elem = 0;
 			while (list_b->size)
 			{
-
 				pos = set_positions(list_a, list_b);
 				if (!pos)
 					free_exit(&list_a, &list_b, 1);
 				best_elem = best_element(pos, list_b->size);
+				size = list_b->size;
 				move_be(list_a, list_b, pos[best_elem]);
-				free_pos(pos, list_b->size);
+				free_pos(pos, size);
 			}
 			int min_pos = min_list_pos(list_a);
 			if (min_pos <= list_a->size / 2)

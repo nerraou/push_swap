@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 11:30:52 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 11:31:29 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/12 16:26:38 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int *set_array_value(int size, int value)
 	i = 0;
 	arr = (int *)malloc(sizeof(int) * size);
 	if (!arr)
-		return (0);
-	while (i <= size)
+		return (NULL);
+	while (i < size)
 	{
 		arr[i] = value;
 		i++;
