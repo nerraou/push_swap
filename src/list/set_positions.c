@@ -6,12 +6,12 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:30:30 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/12 13:11:33 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/12 17:37:31 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
-
+//use this as a sep function
 static void ft_free(int **arr, int size)
 {
 	int i;
