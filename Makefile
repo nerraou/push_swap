@@ -57,6 +57,8 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/move_be.c \
 	  ./src/list/sort_three.c \
 	  ./src/list/sort_five.c \
+	  ./src/list/free_exit.c \
+	  ./src/list/list_del.c \
 	  ./src/lib/ft_abs.c \
 	  ./src/lib/ft_min.c \
 	  ./src/lib/ft_putstr.c 

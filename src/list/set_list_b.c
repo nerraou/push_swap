@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:15:19 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 18:02:16 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/12 13:12:41 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 static void dummy_function(t_list *list_a, int i)
 {
 	int j;
-
 	j = i;
 	if (i <= list_a->size / 2)
 	{

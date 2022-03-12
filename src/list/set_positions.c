@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:30:30 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/09 20:22:59 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/12 13:11:33 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void ft_free(int **arr, int size)
 	}
 	free(arr);
 }
+
 int **set_positions(t_list *list_a, t_list *list_b)
 {
 	int **arr;

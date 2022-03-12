@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 15:24:13 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/12 14:19:40 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,6 @@ void sort_five(t_list *list_a, t_list *list_b);
 
 int **set_positions(t_list *list_a, t_list *list_b);
 
+void list_del(t_list **list);
+void free_exit(t_list **list_a, t_list **list_b, int exit_code);
 #endif

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 11:00:03 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/12 14:18:21 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/12 13:53:09 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/12 14:21:26 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "list.h"
 
-int is_sorted(t_list *list)
+void free_exit(t_list **list_a, t_list **list_b, int exit_code)
 {
-	t_element *cur;
-
-	cur = list->head;
-	if (!cur)
-		return (0);
-	while (cur->next)
-	{
-		if (cur->data >= cur->next->data)
-			return (0);
-		cur = cur->next;
-	}
-	return (1);
+	if (*list_a != NULL)
+		list_del(list_a);
+	if (*list_b != NULL)
+		list_del(list_b);
+	exit(exit_code);
 }

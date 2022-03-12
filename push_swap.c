@@ -27,15 +27,18 @@ void print_rev(t_list *list)
 		cur = cur->prev;
 	}
 }
+void free_pos(int **pos, int size)
+{
+	int i;
 
-// t_list *last_elem(t_list *head_a_a)
-// {
-// 	while (head_a->next != NULL)
-// 	{
-// 		head_a = head_a->next;
-// 	}
-// 	return head_a;
-// }
+	i = 0;
+	while (i < size)
+	{
+		free(pos[i]);
+		i++;
+	}
+	free(pos);
+}
 
 void print_positions(int **arr, int size)
 {
@@ -51,67 +54,58 @@ void print_positions(int **arr, int size)
 
 int main(int ac, char *av[])
 {
-	t_list *list_a;
-	t_list *list_b;
-	int *arr;
-	int *tmp;
-	int *lis;
-	int **pos;
 
-	list_a = list_new();
-	list_b = list_new();
 	if (ac >= 2)
 	{
-		//check the dup
+		t_list *list_a;
+		t_list *list_b;
+
+		list_a = list_new();
+		list_b = list_new();
 		fill_list(list_a, ac, av);
 		if (is_sorted(list_a))
-		{
-			printf("\n");
-			return (0);
-		}
+			free_exit(&list_a, &list_b, 0);
 		else if (list_a->size == 3)
-		{
 			sort_three(list_a);
-		}
 		else if (list_a->size == 5)
-		{
 			sort_five(list_a, list_b);
-		}
 		else
 		{
-			arr = list_to_array(list_a);
-			tmp = set_tmp(arr, list_a->size);
+			int *arr;
+			int *tmp;
+			int *lis;
+			int **pos;
 
+			arr = list_to_array(list_a);
+			if (!arr)
+				free_exit(&list_a, &list_b, 1);
+			tmp = set_tmp(arr, list_a->size);
+			if (!tmp)
+			{
+				free(arr);
+				free_exit(&list_a, &list_b, 1);
+			}
 			int len;
 			lis = ft_lis(tmp, &len, list_a->size);
-			// int i = 0;
-			// while (i < len)
-			// {
-			// 	printf("[lis]%d\n", lis[i++]);
-			// }
-
-			// int j;
+			if (!lis)
+			{
+				free_all(arr, tmp, lis);
+				free_exit(&list_a, &list_b, 1);
+			}
 			set_list_b(list_a, list_b, lis, len);
-			// print_list(list_b);
-			// printf("\n ---------------------------------test a \n");
-			// print_list(list_a);
+			free(lis);
 			int best_elem = 0;
 			while (list_b->size)
 			{
 
 				pos = set_positions(list_a, list_b);
+				if (!pos)
+					free_exit(&list_a, &list_b, 1);
 				best_elem = best_element(pos, list_b->size);
-				// printf("size B %d", list_b->size);
-				// print_positions(pos, list_b->size);
-				// printf("\nBEST_ELEM %d\n  ", best_elem);
 				move_be(list_a, list_b, pos[best_elem]);
-				// printf("\n ---------------------------------changes B  \n");
-				// print_list(list_b);
-				// printf("\n ---------------------------------changes A \n");
-				// print_list(list_a);
+				free_pos(pos, list_b->size);
 			}
 			int min_pos = min_list_pos(list_a);
-			// printf("min pos %d", min_pos);
 			if (min_pos <= list_a->size / 2)
 			{
 				while (min_pos--)
@@ -130,12 +124,7 @@ int main(int ac, char *av[])
 				}
 			}
 		}
-
-		// printf("\n ---------------------------------test b \n");
-		// print_list(list_b);
-		// printf("\n ---------------------------------test  a\n");
-		// print_list(list_a);
+		free_exit(&list_a, &list_b, 0);
 	}
-
 	return 0;
 }

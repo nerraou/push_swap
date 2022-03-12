@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:15:29 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 14:38:22 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/12 15:08:13 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int ft_min(int n1, int n2)
 	int num2;
 	num1 = ft_abs(n1);
 	num2 = ft_abs(n2);
-	if (num1 < num2)
+	if (num1 <= num2)
 		return (num1);
 	return (num2);
 }

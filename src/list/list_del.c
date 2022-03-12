@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   list_del.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 11:00:03 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/12 14:18:21 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/12 13:37:40 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/12 13:45:44 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "list.h"
 
-int is_sorted(t_list *list)
+void list_del(t_list **list)
 {
-	t_element *cur;
+	t_element *node;
+	t_element *next;
 
-	cur = list->head;
-	if (!cur)
-		return (0);
-	while (cur->next)
+	node = (*list)->head;
+	while (node)
 	{
-		if (cur->data >= cur->next->data)
-			return (0);
-		cur = cur->next;
+		next = node->next;
+		free(node);
+		node = next;
 	}
-	return (1);
+	free(*list);
+	*list = NULL;
 }
