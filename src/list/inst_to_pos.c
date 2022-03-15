@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:48:28 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 19:25:08 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/15 10:06:37 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ int inst_to_pos(t_list *list_a, int data)
 	h_s = list_a->size / 2;
 	head = list_a->head;
 	tail = list_a->tail;
-	if (list_a->size >= 2)
-	{
-		if (data > tail->data && data < head->data)
-			return (0);
-	}
+
+	if (data > tail->data && data < head->data)
+		return (0);
 	while (i <= h_s && head && head->next)
 	{
 		if (data > head->data && data < head->next->data)
@@ -48,5 +46,5 @@ int inst_to_pos(t_list *list_a, int data)
 	if (max_pos <= h_s)
 		return (max_pos + 1);
 	else
-		return (max_pos + 1 - list_a->size);
+		return ((max_pos + 1) - list_a->size);
 }

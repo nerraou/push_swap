@@ -31,7 +31,6 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
 	  ./src/list/add_back.c \
 	  ./src/list/list_new.c \
-	  ./src/list/ft_swap.c \
 	  ./src/list/sa.c \
 	  ./src/list/sb.c \
 	  ./src/list/ss.c \
@@ -59,9 +58,13 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/sort_five.c \
 	  ./src/list/free_exit.c \
 	  ./src/list/list_del.c \
+	  ./src/list/map_values.c \
 	  ./src/lib/ft_abs.c \
 	  ./src/lib/ft_min.c \
-	  ./src/lib/ft_putstr.c 
+	  ./src/lib/ft_putstr.c \
+	  ./src/lib/ft_i_indexof.c \
+	  ./src/lib/ft_bubbelsort.c \
+	  ./src/lib/ft_swap.c
 	  
 
 SRC =  push_swap.c
@@ -75,7 +78,7 @@ B_SRC = ./src/gnl/get_next_line.c \
 	  checker.c 
 
 
-OBJ = $(LIST_SRC:.c=.o) $(COMMON_SRC:.c=.o)  $(LIS_SRC:.c=.o) $(SRC:.c=.o)
+OBJ = $(LIST_SRC:.c=.o) $(COMMON_SRC:.c=.o)  $(LIS_SRC:.c=.o)  $(SRC:.c=.o)
 
 B_OBJ = $(B_SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o)
 

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   ft_bubbelsort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 14:33:06 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/15 20:32:04 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/15 20:00:33 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/15 20:34:49 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-#define LIB_H
+#include "lib.h"
 
-#include <unistd.h>
+void ft_bubbelsort(int *arr, int size)
+{
+	int i;
+	int j;
 
-void ft_putstr(const char *str);
-int ft_min(int n1, int n2);
-int ft_abs(int num);
-void ft_swap(int *a, int *b);
-void ft_bubbelsort(int *arr, int size);
-int ft_i_indexof(int *arr, int size, int data);
-
-#endif
+	i = 0;
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+				ft_swap(&arr[j], &arr[j + 1]);
+			j++;
+		}
+		i++;
+	}
+}

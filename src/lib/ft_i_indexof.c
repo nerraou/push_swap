@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_i_indexof.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 13:32:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 13:36:30 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/15 20:19:42 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/15 20:22:49 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "lib.h"
 
-void ft_swap(int *a, int *b)
+int ft_i_indexof(int *arr, int size, int data)
 {
-	int temp;
+	int i;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	i = 0;
+	while (i < size)
+	{
+		if (arr[i] == data)
+			return (i);
+		i++;
+	}
+	return (-1);
 }

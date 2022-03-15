@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/12 14:19:40 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/15 20:26:36 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_element
 {
 	int data;
+	int m_data;
 	struct s_element *next;
 	struct s_element *prev;
 } t_element;
@@ -60,7 +61,6 @@ int inst_to_top(int pos, int size);
 int element(int *arr);
 int best_element(int **arr, int size);
 
-void ft_swap(int *a, int *b);
 void add_front(t_list *list, int new_data);
 void add_back(t_list *list, int new_data);
 void set_list_b(t_list *list_a, t_list *list_b, int *lis, int len);
@@ -73,4 +73,5 @@ int **set_positions(t_list *list_a, t_list *list_b);
 
 void list_del(t_list **list);
 void free_exit(t_list **list_a, t_list **list_b, int exit_code);
+void map_values(t_list *list, int *map);
 #endif

@@ -1,5 +1,6 @@
 #include "list.h"
 #include "lis.h"
+#include "lib.h"
 #include "get_next_line.h"
 #include "checker.h"
 #include "common.h"
@@ -59,10 +60,23 @@ int main(int ac, char *av[])
 	{
 		t_list *list_a;
 		t_list *list_b;
+		int *map;
 
 		list_a = list_new();
 		list_b = list_new();
 		fill_list(list_a, ac, av);
+		map = (int *)malloc(sizeof(int) * list_a->size);
+		if (!map)
+			return 0;
+		map = list_to_array(list_a);
+		ft_bubbelsort(map, list_a->size);
+		map_values(list_a, map);
+		// int w = 0;
+		// while (w < list_a->size)
+		// {
+		// 	printf("[map]%d\n", map[w++]);
+		// }
+
 		if (is_sorted(list_a))
 			free_exit(&list_a, &list_b, 0);
 		else if (list_a->size == 3)
@@ -87,14 +101,15 @@ int main(int ac, char *av[])
 				free_exit(&list_a, &list_b, 1);
 			}
 			free(arr);
-			int len;
-			lis = ft_lis(tmp, &len, list_a->size);
+			int len_lis;
+			lis = ft_lis(tmp, &len_lis, list_a->size);
 			if (!lis)
 			{
 				free_all(arr, tmp, lis);
 				free_exit(&list_a, &list_b, 1);
 			}
-			set_list_b(list_a, list_b, lis, len);
+
+			set_list_b(list_a, list_b, lis, len_lis);
 			free(lis);
 			int best_elem = 0;
 			while (list_b->size)
