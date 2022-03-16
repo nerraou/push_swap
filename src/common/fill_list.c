@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:17:00 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/16 14:29:06 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 19:06:20 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,29 @@
 
 void	fill_list(t_list *list, int ac, char *av[])
 {
-	int	i;
+	int		i;
+	int		j;
+	char	**numbers;
 
 	if (is_dup(ac, av))
 		ft_exit("Error");
 	i = 1;
 	while (i < ac)
 	{
-		if (!is_int(av[i]))
-			ft_exit("Error");
-		add_back(list, atoi(av[i]), -1);
+		numbers = ft_split(av[i], ' ');
+		j = 0;
+		while ()
+		{
+		}
+		
+		while (numbers[j])
+		{
+			if (!is_int(numbers[j]))
+				ft_exit("Error");
+			add_back(list, atoi(numbers[j]), -1);
+			j++;
+		}
 		i++;
 	}
+	
 }

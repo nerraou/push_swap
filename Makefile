@@ -64,6 +64,7 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/lib/ft_putstr.c \
 	  ./src/lib/ft_i_indexof.c \
 	  ./src/lib/ft_bubbelsort.c \
+	  ./src/lib/ft_split.c \
 	  ./src/lib/ft_swap.c
 	  
 
