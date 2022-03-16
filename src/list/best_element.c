@@ -6,19 +6,18 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:05:36 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 18:33:24 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:18:30 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
-#include <limits.h>
 
-int best_element(int **arr, int size)
+int	best_element(int **arr, int size)
 {
-	int i;
-	int b_elem;
-	int elem;
-	int b_index;
+	int	i;
+	int	b_elem;
+	int	elem;
+	int	b_index;
 
 	b_index = -1;
 	b_elem = INT_MAX;

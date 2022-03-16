@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:56:23 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/07 11:59:20 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:31:01 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-int is_exist(int *arr, int size, int elem)
+int	is_exist(int *arr, int size, int elem)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)

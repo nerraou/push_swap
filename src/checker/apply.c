@@ -6,13 +6,13 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:34:46 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/28 19:38:41 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 10:42:00 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void apply(const char *action, t_list *list_a, t_list *list_b)
+void	apply(const char *action, t_list *list_a, t_list *list_b)
 {
 	if (ft_strcmp(action, "sa") == 0)
 		sa(list_a);

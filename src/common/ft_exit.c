@@ -6,13 +6,13 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:57:00 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/28 17:07:02 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:21:14 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-void ft_exit(const char *str)
+void	ft_exit(const char *str)
 {
 	ft_putstr(str);
 	write(1, "\n", 1);

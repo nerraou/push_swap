@@ -6,17 +6,17 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:14:28 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/07 10:16:14 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:12:17 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-int min_index(int *arr, int size)
+int	min_index(int *arr, int size)
 {
-	int tmp;
-	int index;
-	int i;
+	int	tmp;
+	int	index;
+	int	i;
 
 	index = 0;
 	i = 1;
@@ -30,5 +30,5 @@ int min_index(int *arr, int size)
 		}
 		i++;
 	}
-	return index;
+	return (index);
 }

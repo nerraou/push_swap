@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr.c                                               :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 15:51:18 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/25 15:53:23 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/25 15:49:28 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/16 14:47:45 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-void rr(t_list *list_a, t_list *list_b)
+void	rb(t_list *list)
 {
-	ra(list_a);
-	rb(list_b);
+	int	data;
+	int	m_data;
+
+	if (list->size <= 1)
+		return ;
+	m_data = list->head->m_data;
+	data = list_shift(list);
+	add_back(list, data, m_data);
 }

@@ -6,20 +6,21 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 10:15:48 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/26 10:22:05 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:20:38 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int signe;
-	int num;
+	int	i;
+	int	signe;
+	int	num;
 
 	i = 0;
 	signe = 1;
 	num = 0;
-	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\r' || str[i] == '\v' || str[i] == '\f' || str[i] == ' ')
+	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\r' \
+	|| str[i] == '\v' || str[i] == '\f' || str[i] == ' ')
 		i++;
 	if (str[i] == '+')
 		i++;

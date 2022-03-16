@@ -6,17 +6,17 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 12:22:32 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 12:27:19 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:11:37 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-int max_index(int *arr, int size)
+int	max_index(int *arr, int size)
 {
-	int tmp;
-	int index;
-	int i;
+	int	tmp;
+	int	index;
+	int	i;
 
 	index = 0;
 	i = 1;
@@ -30,5 +30,5 @@ int max_index(int *arr, int size)
 		}
 		i++;
 	}
-	return index;
+	return (index);
 }

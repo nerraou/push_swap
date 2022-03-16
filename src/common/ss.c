@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrr.c                                              :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 15:56:59 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/25 15:57:28 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/25 15:39:05 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/16 14:48:10 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "common.h"
 
-void rrr(t_list *list_a, t_list *list_b)
+void	ss(t_list *list_a, t_list *list_b)
 {
-	rra(list_a);
-	rrb(list_b);
+	sa(list_a);
+	sb(list_b);
 }

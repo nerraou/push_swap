@@ -6,11 +6,11 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:15:56 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 17:56:44 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:53:04 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "common.h"
 
 void move_be(t_list *list_a, t_list *list_b, int *be)
 {

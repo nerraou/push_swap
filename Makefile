@@ -15,6 +15,17 @@ COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/fill_list.c \
 	  ./src/common/ft_strcmp.c \
 	  ./src/common/is_sorted.c \
+	  ./src/common/sa.c \
+	  ./src/common/sb.c \
+	  ./src/common/ss.c \
+	  ./src/common/ra.c \
+	  ./src/common/rb.c \
+	  ./src/common/rr.c \
+	  ./src/common/rra.c \
+	  ./src/common/rrb.c \
+	  ./src/common/rrr.c \
+	  ./src/common/pa.c \
+	  ./src/common/pb.c \
 	  ./src/common/is_dup.c 
 
 LIS_SRC = ./src/lis/max_index.c \
@@ -31,17 +42,6 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/node_new.c \
 	  ./src/list/add_back.c \
 	  ./src/list/list_new.c \
-	  ./src/list/sa.c \
-	  ./src/list/sb.c \
-	  ./src/list/ss.c \
-	  ./src/list/ra.c \
-	  ./src/list/rb.c \
-	  ./src/list/rr.c \
-	  ./src/list/rra.c \
-	  ./src/list/rrb.c \
-	  ./src/list/rrr.c \
-	  ./src/list/pa.c \
-	  ./src/list/pb.c \
 	  ./src/list/list_pop.c \
 	  ./src/list/list_shift.c \
 	  ./src/list/set_list_b.c \

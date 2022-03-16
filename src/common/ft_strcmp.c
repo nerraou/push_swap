@@ -6,16 +6,16 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 12:51:32 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/26 13:43:38 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:22:53 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int ft_strcmp(const char *str1, const char *str2)
+int	ft_strcmp(const char *str1, const char *str2)
 {
-	int i;
-	int diff;
+	int	i;
+	int	diff;
 
 	diff = 0;
 	i = 0;
@@ -23,7 +23,7 @@ int ft_strcmp(const char *str1, const char *str2)
 	{
 		diff = str1[i] - str2[i];
 		if (diff != 0)
-			break;
+			break ;
 		i++;
 	}
 	return (diff);

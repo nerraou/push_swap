@@ -6,16 +6,16 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 20:00:33 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/15 20:34:49 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:36:08 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-void ft_bubbelsort(int *arr, int size)
+void	ft_bubbelsort(int *arr, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < size - 1)

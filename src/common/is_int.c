@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 10:35:04 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/28 10:51:05 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:23:38 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-int is_int(const char *str)
+int	is_int(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str[i])

@@ -6,18 +6,18 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:04:35 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/07 10:43:01 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:11:07 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-int *list_to_array(t_list *list)
+int	*list_to_array(t_list *list)
 {
-	t_element *node;
-	int *arr;
-	int size;
-	int i;
+	t_element	*node;
+	int			*arr;
+	int			size;
+	int			i;
 
 	size = list->size;
 	arr = (int *)malloc(sizeof(int) * size);

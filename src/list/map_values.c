@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 20:16:12 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/15 20:25:51 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:03:14 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-void map_values(t_list *list, int *map)
+void	map_values(t_list *list, int *map)
 {
-	t_element *node;
+	t_element	*node;
 
 	node = list->head;
 	while (node != NULL)

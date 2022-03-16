@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 15:58:43 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/25 16:00:00 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/25 12:30:23 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/16 14:48:28 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "common.h"
 
-void pb(t_list *head_a, t_list *head_b)
+void	pa(t_list *head_a, t_list *head_b)
 {
-	if (head_a->size == 0)
-		return;
-	int data;
+	int	data;
+	int	m_data;
 
-	data = list_shift(head_a);
-	add_front(head_b, data);
+	if (head_b->size == 0)
+		return ;
+	m_data = head_b->head->m_data;
+	data = list_shift(head_b);
+	add_front(head_a, data, m_data);
 }

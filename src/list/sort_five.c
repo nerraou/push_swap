@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:22:31 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/11 15:46:14 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 14:56:36 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "common.h"
 
-static void move_min(t_list *list_a)
+static void	move_min(t_list *list_a)
 {
-	int min;
+	int	min;
 
 	min = min_list_pos(list_a);
 	if (min <= 2)
@@ -25,7 +25,6 @@ static void move_min(t_list *list_a)
 			ft_putstr("ra\n");
 		}
 	}
-
 	else
 	{
 		min = list_a->size - min;
@@ -37,7 +36,7 @@ static void move_min(t_list *list_a)
 	}
 }
 
-void sort_five(t_list *list_a, t_list *list_b)
+void	sort_five(t_list *list_a, t_list *list_b)
 {
 	move_min(list_a);
 	pb(list_a, list_b);

@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 13:16:34 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 13:55:00 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/25 15:51:18 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/16 11:55:55 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "common.h"
 
-void sa(t_list *list)
+void	rr(t_list *list_a, t_list *list_b)
 {
-	if (list->size <= 1)
-		return;
-	t_element *tmp;
-
-	tmp = list->head;
-	if (tmp != NULL && tmp->next != NULL)
-		ft_swap(&tmp->data, &tmp->next->data);
+	ra(list_a);
+	rb(list_b);
 }

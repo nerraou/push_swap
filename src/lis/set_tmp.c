@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:18:06 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/07 17:49:11 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:13:28 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-static void dummy_function(int *tmp, int *arr, int index, int tmp_index)
+static void	dummy_function(int *tmp, int *arr, int index, int tmp_index)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < index)
@@ -25,12 +25,12 @@ static void dummy_function(int *tmp, int *arr, int index, int tmp_index)
 	}
 }
 
-int *set_tmp(int *arr, int size)
+int	*set_tmp(int *arr, int size)
 {
-	int i;
-	int index;
-	int *tmp;
-	int j;
+	int	i;
+	int	index;
+	int	*tmp;
+	int	j;
 
 	tmp = (int *)malloc(sizeof(int) * size);
 	if (!tmp)

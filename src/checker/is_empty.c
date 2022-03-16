@@ -6,13 +6,13 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 11:15:49 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/26 13:28:52 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:13:22 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int is_empty(t_list *list)
+int	is_empty(t_list *list)
 {
 	if (list->size != 0)
 		return (0);

@@ -6,16 +6,16 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:19:18 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/25 15:19:13 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:02:42 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-int list_shift(t_list *list)
+int	list_shift(t_list *list)
 {
-	t_element *first;
-	int data;
+	t_element	*first;
+	int			data;
 
 	first = list->head;
 	data = first->data;

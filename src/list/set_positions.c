@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:30:30 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/12 17:37:31 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:37:25 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
-//use this as a sep function
-static void ft_free(int **arr, int size)
+
+static void	ft_free(int **arr, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)
@@ -25,35 +25,29 @@ static void ft_free(int **arr, int size)
 	free(arr);
 }
 
-int **set_positions(t_list *list_a, t_list *list_b)
+int	**set_positions(t_list *list_a, t_list *list_b)
 {
-	int **arr;
-	int i;
-	int pos;
-	t_element *node;
+	t_element	*node;
+	int			**positions;
+	int			i;
 
-	arr = (int **)malloc(sizeof(int *) * list_b->size);
-	if (!arr)
-		return NULL;
+	positions = (int **)malloc(sizeof(int *) * list_b->size);
+	if (!positions)
+		return (NULL);
 	i = 0;
-	pos = 0;
 	node = list_b->head;
 	while (i < list_b->size)
 	{
-		arr[i] = (int *)malloc(sizeof(int) * 2);
-		if (!arr[i])
+		positions[i] = (int *)malloc(sizeof(int) * 2);
+		if (!positions[i])
 		{
-			ft_free(arr, i);
-			return NULL;
+			ft_free(positions, i);
+			return (NULL);
 		}
-		pos = inst_to_pos(list_a, node->data);
-		// printf("[posA] %d\n", pos);
-		arr[i][0] = pos;
-		pos = inst_to_top(i, list_b->size);
-		// printf("[posB] %d\n", pos);
-		arr[i][1] = pos;
+		positions[i][0] = inst_to_pos(list_a, node->data);
+		positions[i][1] = inst_to_top(i, list_b->size);
 		i++;
 		node = node->next;
 	}
-	return (arr);
+	return (positions);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 14:28:29 by nerraou           #+#    #+#             */
-/*   Updated: 2022/02/24 17:22:41 by nerraou          ###   ########.fr       */
+/*   Created: 2022/02/25 15:55:13 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/16 14:48:36 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "common.h"
 
-void ra(t_list *list)
+void	rrb(t_list *list)
 {
-	if (list->size <= 1)
-		return;
-	int data;
+	int	data;
+	int	m_data;
 
-	data = list_shift(list);
-	add_back(list, data);
+	if (list->size <= 1)
+		return ;
+	m_data = list->tail->m_data;
+	data = list_pop(list);
+	add_front(list, data, m_data);
 }

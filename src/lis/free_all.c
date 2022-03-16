@@ -6,13 +6,13 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 11:47:14 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:08:51 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:09:22 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-void free_all(int *sub_s, int *arr, int *lenght)
+void	free_all(int *sub_s, int *arr, int *lenght)
 {
 	free(sub_s);
 	free(arr);

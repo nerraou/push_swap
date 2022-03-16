@@ -6,18 +6,18 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:52:07 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 18:29:55 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:04:07 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-int max_list_pos(t_list *list)
+int	max_list_pos(t_list *list)
 {
-	int max;
-	int pos;
-	int max_pos;
-	t_element *elm;
+	t_element	*elm;
+	int			max;
+	int			pos;
+	int			max_pos;
 
 	elm = list->head;
 	max_pos = 0;

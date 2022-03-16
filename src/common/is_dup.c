@@ -6,16 +6,16 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:43:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/02 16:28:36 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:23:20 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-int is_dup(int ac, char *av[])
+int	is_dup(int ac, char *av[])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 2;

@@ -6,16 +6,16 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:31:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/10 14:38:24 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:35:49 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int ft_abs(int num)
+int	ft_abs(int num)
 {
 	if (num < 0)
-		return num * -1;
+		return (num * -1);
 	else
-		return num;
+		return (num);
 }

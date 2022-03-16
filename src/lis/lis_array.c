@@ -6,17 +6,17 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:08:16 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/12 17:23:07 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:10:33 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-int *lis_array(int *sub_s, int *arr, int *length, int size)
+int	*lis_array(int *sub_s, int *arr, int *length, int size)
 {
-	int prev;
-	int len;
-	int *lis;
+	int	prev;
+	int	len;
+	int	*lis;
 
 	prev = max_index(length, size);
 	len = length[prev];

@@ -6,19 +6,18 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 12:26:16 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/07 17:51:06 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:10:13 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lis.h"
 
-int *ft_lis(int *arr, int *len, int size)
+int	*ft_lis(int *arr, int *len, int size)
 {
-
-	int *length;
-	int *sub_s;
-	int *lis;
-	int prev;
+	int	*length;
+	int	*sub_s;
+	int	*lis;
+	int	prev;
 
 	length = set_array_value(size, 1);
 	if (!length)
