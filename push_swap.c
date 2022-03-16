@@ -160,6 +160,11 @@ int main(int ac, char *av[])
 		if (!list_b)
 			free_exit(&list_a, &list_b, 1);
 		fill_list(list_a, ac, av);
+		if (is_dup(list_a))
+		{
+			ft_putstr("Error\n");
+			free_exit(&list_a, &list_b, 1);
+		}
 		if (is_sorted(list_a))
 			free_exit(&list_a, &list_b, 0);
 		push_swap(list_a,list_b);		

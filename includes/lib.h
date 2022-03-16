@@ -14,6 +14,7 @@
 # define LIB_H
 
 # include <unistd.h>
+#include <stdlib.h>
 
 int		ft_min(int n1, int n2);
 int		ft_abs(int num);
@@ -22,6 +23,5 @@ int		ft_i_indexof(int *arr, int size, int data);
 void	ft_putstr(const char *str);
 void	ft_swap(int *a, int *b);
 void	ft_bubbelsort(int *arr, int size);
-char	**ft_split(char const *s, char c);
 
 #endif

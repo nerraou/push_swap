@@ -15,6 +15,8 @@ COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/fill_list.c \
 	  ./src/common/ft_strcmp.c \
 	  ./src/common/is_sorted.c \
+	  ./src/common/ft_split.c \
+	  ./src/common/ft_substr.c \
 	  ./src/common/sa.c \
 	  ./src/common/sb.c \
 	  ./src/common/ss.c \
@@ -64,7 +66,6 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/lib/ft_putstr.c \
 	  ./src/lib/ft_i_indexof.c \
 	  ./src/lib/ft_bubbelsort.c \
-	  ./src/lib/ft_split.c \
 	  ./src/lib/ft_swap.c
 	  
 

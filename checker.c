@@ -47,6 +47,11 @@ int main(int ac, char *av[])
 	if (ac > 2)
 	{
 		fill_list(list_a, ac, av);
+		if (is_dup(list_a))
+		{
+			ft_putstr("Error\n");
+			free_exit(&list_a, &list_b, 1);
+		}
 		line = get_next_line(0);
 		while (line)
 		{
@@ -54,10 +59,6 @@ int main(int ac, char *av[])
 				ft_exit("Error");
 			apply(line, list_a, list_b);
 			free(line);
-			// printf("1 - ------ list a\n");
-			// print_list(list_a);
-			// printf("1 - ------ list b\n");
-			// print_list(list_b);
 			line = get_next_line(0);
 		}
 		if (!is_empty(list_b) || !is_sorted(list_a))

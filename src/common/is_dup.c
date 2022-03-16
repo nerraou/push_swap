@@ -12,23 +12,23 @@
 
 #include "common.h"
 
-int	is_dup(int ac, char *av[])
+int	is_dup(t_list *list)
 {
-	int	i;
-	int	j;
 
-	i = 1;
-	j = 2;
-	while (i < ac)
+	t_element *cur;
+	t_element *next;
+	
+	cur = list->head;
+	while (cur->next != NULL)
 	{
-		j = i + 1;
-		while (j < ac)
+		next = cur->next; 
+		while (next)
 		{
-			if (ft_strcmp(av[i], av[j]) == 0)
+			if (next->data == cur->data)
 				return (1);
-			j++;
+			next = next->next;
 		}
-		i++;
+		cur = cur->next;	
 	}
 	return (0);
 }

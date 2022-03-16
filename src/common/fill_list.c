@@ -18,17 +18,11 @@ void	fill_list(t_list *list, int ac, char *av[])
 	int		j;
 	char	**numbers;
 
-	if (is_dup(ac, av))
-		ft_exit("Error");
 	i = 1;
 	while (i < ac)
 	{
 		numbers = ft_split(av[i], ' ');
 		j = 0;
-		while ()
-		{
-		}
-		
 		while (numbers[j])
 		{
 			if (!is_int(numbers[j]))

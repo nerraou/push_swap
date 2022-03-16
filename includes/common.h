@@ -21,8 +21,11 @@ int		is_int(const char *str);
 int		is_sorted(t_list *list);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
-int		is_dup(int ac, char *av[]);
+int		is_dup(t_list *list);
 int		ft_strcmp(const char *str1, const char *str2);
+
+char	**ft_split(const char *s, char c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 void	fill_list(t_list *list, int ac, char *av[]);
 void	ft_exit(const char *str);
