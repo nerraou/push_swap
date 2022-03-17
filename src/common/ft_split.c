@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:54:35 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 11:56:30 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:20:19 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,20 @@ static size_t	word_count(char const *s, char c)
 	return (word);
 }
 
+static char **ft_free(char **str, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char		**str;
@@ -62,7 +76,7 @@ char	**ft_split(const char *s, char c)
 		length = ft_strclen(s + start, c);
 		str[i] = ft_substr(s, start, length);
 		if (!str[i])
-			return (free_2d(str, i));
+			return (ft_free(str, i));
 		start += length;
 		i++;
 	}

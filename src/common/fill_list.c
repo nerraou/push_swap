@@ -6,13 +6,13 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:17:00 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 12:00:49 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:14:10 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-void	fill_list(t_list *list, int ac, char *av[])
+void	fill_list(t_list *list_a, t_list *list_b, int ac, char *av[])
 {
 	int		i;
 	int		j;
@@ -23,16 +23,16 @@ void	fill_list(t_list *list, int ac, char *av[])
 	{
 		numbers = ft_split(av[i], ' ');
 		if (!numbers)
-			free_2d(numbers, i);
+			return ;
 		j = 0;
 		while (numbers[j])
 		{
 			if (!is_int(numbers[j]))
-				ft_exit("Error");
-			add_back(list, atoi(numbers[j]), -1);
+				free_exit(&list_a, &list_b, 1, "Error\n");
+			add_back(list_a, atoi(numbers[j]), -1);
 			j++;
 		}
+		free_2d(numbers);
 		i++;
 	}
-	free(numbers);
 }

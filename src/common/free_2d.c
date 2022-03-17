@@ -6,22 +6,21 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:50:00 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 12:01:09 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:17:09 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-char	**free_2d(char **str, int size)
+void	free_2d(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (str[i])
 	{
 		free(str[i]);
 		i++;
 	}
 	free(str);
-	return (NULL);
 }

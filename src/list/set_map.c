@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:17:36 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 15:10:46 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:07:11 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ void	set_map(t_list *list_a, t_list *list_b)
 {
 	int	*map;
 
-	map = (int *)malloc(sizeof(int) * list_a->size);
-	if (!map)
-		return ;
 	map = list_to_array(list_a);
 	if (!map)
 	{
@@ -28,4 +25,5 @@ void	set_map(t_list *list_a, t_list *list_b)
 	}
 	ft_bubbelsort(map, list_a->size);
 	map_values(list_a, map);
+	free(map);
 }

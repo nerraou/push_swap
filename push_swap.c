@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:44:25 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 15:11:52 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:20:50 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int ac, char *av[])
 		list_b = list_new();
 		if (!list_b)
 			free_exit(&list_a, &list_b, 1, "Error\n");
-		fill_list(list_a, ac, av);
+		fill_list(list_a, list_b, ac, av);
 		if (is_dup(list_a))
 			free_exit(&list_a, &list_b, 1, "Error\n");
 		if (is_sorted(list_a))
