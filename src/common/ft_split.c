@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:54:35 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 16:20:19 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:24:24 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	word_count(char const *s, char c)
 	return (word);
 }
 
-static char **ft_free(char **str, int size)
+static char	**ft_free(char **str, int size)
 {
 	int	i;
 
