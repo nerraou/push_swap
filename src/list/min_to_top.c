@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_dup.c                                           :+:      :+:    :+:   */
+/*   min_to_top.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:43:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 12:00:23 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/17 11:13:29 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/17 11:30:35 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "list.h"
 #include "common.h"
 
-int	is_dup(t_list *list)
+void	min_to_top(t_list *list_a)
 {
-	t_element	*cur;
-	t_element	*next;
+	int	min_pos;
 
-	cur = list->head;
-	while (cur->next != NULL)
+	min_pos = min_list_pos(list_a);
+	if (min_pos <= list_a->size / 2)
 	{
-		next = cur->next;
-		while (next)
+		while (min_pos--)
 		{
-			if (next->data == cur->data)
-				return (1);
-			next = next->next;
+			ra(list_a);
+			ft_putstr("ra\n");
 		}
-		cur = cur->next;
 	}
-	return (0);
+	else
+	{
+		min_pos = list_a->size - min_pos;
+		while (min_pos--)
+		{
+			rra(list_a);
+			ft_putstr("rra\n");
+		}
+	}
 }

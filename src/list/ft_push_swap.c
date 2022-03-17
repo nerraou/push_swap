@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_dup.c                                           :+:      :+:    :+:   */
+/*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:43:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 12:00:23 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/17 11:15:28 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/17 15:10:32 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "list.h"
 
-int	is_dup(t_list *list)
+void	ft_push_swap(t_list *list_a, t_list *list_b)
 {
-	t_element	*cur;
-	t_element	*next;
-
-	cur = list->head;
-	while (cur->next != NULL)
+	if (list_a->size == 3)
+		sort_three(list_a);
+	else if (list_a->size == 5)
+		sort_five(list_a, list_b);
+	else
 	{
-		next = cur->next;
-		while (next)
-		{
-			if (next->data == cur->data)
-				return (1);
-			next = next->next;
-		}
-		cur = cur->next;
+		set_map(list_a, list_b);
+		ft_set_list_b(list_a, list_b);
+		move_best_element(list_a, list_b);
+		min_to_top(list_a);
 	}
-	return (0);
+	free_exit(&list_a, &list_b, 0, "");
 }

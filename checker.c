@@ -1,57 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/17 14:44:49 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/17 14:51:35 by nerraou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "list.h"
 #include "get_next_line.h"
 #include "checker.h"
 #include "common.h"
 
-void print_list(t_list *list)
+static void	check_dup(t_list *list_a, t_list *list_b)
 {
-	t_element *elem;
-
-	elem = list->head;
-	while (elem != NULL)
+	if (is_dup(list_a))
 	{
-		printf("[]%d\n", elem->data);
-		elem = elem->next;
+		ft_putstr("Error\n");
+		free_exit(&list_a, &list_b, 1);
 	}
 }
 
-void print_rev(t_list *list)
+int	main(int ac, char *av[])
 {
-	t_element *cur;
+	char	*line;
+	t_list	*list_a;
+	t_list	*list_b;
 
-	cur = list->tail;
-	while (cur != NULL)
+	if (ac >= 2)
 	{
-		printf("[]%d\n", cur->data);
-		cur = cur->prev;
-	}
-}
-
-// t_list *last_elem(t_list *head_a_a)
-// {
-// 	while (head_a->next != NULL)
-// 	{
-// 		head_a = head_a->next;
-// 	}
-// 	return head_a;
-// }
-
-int main(int ac, char *av[])
-{
-	char *line;
-	t_list *list_a;
-	t_list *list_b;
-
-	list_a = list_new();
-	list_b = list_new();
-	if (ac > 2)
-	{
+		list_a = list_new();
+		list_b = list_new();
 		fill_list(list_a, ac, av);
-		if (is_dup(list_a))
-		{
-			ft_putstr("Error\n");
-			free_exit(&list_a, &list_b, 1);
-		}
+		check_dup(list_a, list_b);
 		line = get_next_line(0);
 		while (line)
 		{
@@ -62,15 +46,8 @@ int main(int ac, char *av[])
 			line = get_next_line(0);
 		}
 		if (!is_empty(list_b) || !is_sorted(list_a))
-		{
-			printf("------ list a\n");
-			print_list(list_a);
-			printf("------ list b\n");
-			print_list(list_b);
 			ft_exit("KO");
-		}
 		ft_putstr("OK\n");
 	}
-	//printf("\n test \n");
-	return 0;
+	return (0);
 }

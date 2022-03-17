@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:05:05 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/16 14:18:52 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:08:38 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <limits.h>
+# include <limits.h>
 # include "lib.h"
 
 typedef struct s_element
@@ -55,8 +55,14 @@ void		move_be(t_list *list_a, t_list *list_b, int *be);
 void		sort_three(t_list *list_a);
 void		sort_five(t_list *list_a, t_list *list_b);
 void		list_del(t_list **list);
-void		free_exit(t_list **list_a, t_list **list_b, int exit_code);
+void		free_exit(t_list **list_a, t_list **list_b, int exit, char *str);
 void		map_values(t_list *list, int *map);
+
+void		ft_set_list_b(t_list *list_a, t_list *list_b);
+void		ft_push_swap(t_list *list_a, t_list *list_b);
+void		set_map(t_list *list_a, t_list *list_b);
+void		move_best_element(t_list *list_a, t_list *list_b);
+void		min_to_top(t_list *list_a);
 
 int			**set_positions(t_list *list_a, t_list *list_b);
 

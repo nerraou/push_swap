@@ -6,15 +6,15 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:54:35 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/16 18:55:34 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:56:30 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-static size_t ft_strclen(const char *str, char c)
+static size_t	ft_strclen(const char *str, char c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] && str[i] != c)
@@ -22,10 +22,10 @@ static size_t ft_strclen(const char *str, char c)
 	return (i);
 }
 
-static size_t word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
-	int index;
-	size_t word;
+	int		index;
+	size_t	word;
 
 	word = 0;
 	index = 0;
@@ -41,28 +41,13 @@ static size_t word_count(char const *s, char c)
 	return (word);
 }
 
-static char **ft_free(char **str, int size)
+char	**ft_split(const char *s, char c)
 {
-	int i;
-
-	i = 0;
-	while (i < size)
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (NULL);
-}
-
-
-char **ft_split(const char  *s, char c)
-{
-	char **str;
-	size_t i;
-	size_t words;
-	size_t start;
-	size_t length;
+	char		**str;
+	size_t		i;
+	size_t		words;
+	size_t		start;
+	size_t		length;
 
 	words = word_count(s, c);
 	i = 0;
@@ -75,9 +60,9 @@ char **ft_split(const char  *s, char c)
 		while (s[start] == c && s[start])
 			start++;
 		length = ft_strclen(s + start, c);
-		str[i] = ft_substr(s,  start, length);
+		str[i] = ft_substr(s, start, length);
 		if (!str[i])
-			return (ft_free(str, i));
+			return (free_2d(str, i));
 		start += length;
 		i++;
 	}

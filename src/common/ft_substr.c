@@ -1,13 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/17 11:57:30 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/17 11:58:17 by nerraou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "common.h"
 
-static int ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
-	int i =0;
+	int	i;
+
+	i = 0;
 	while (str[i])
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
 static char	*ft_strncpy(char *dest, const char *src, size_t n)
@@ -27,6 +41,7 @@ static char	*ft_strncpy(char *dest, const char *src, size_t n)
 	}
 	return (dest);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;

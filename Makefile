@@ -17,6 +17,7 @@ COMMON_SRC = ./src/common/ft_atoi.c \
 	  ./src/common/is_sorted.c \
 	  ./src/common/ft_split.c \
 	  ./src/common/ft_substr.c \
+	  ./src/common/free_2d.c \
 	  ./src/common/sa.c \
 	  ./src/common/sb.c \
 	  ./src/common/ss.c \
@@ -61,6 +62,11 @@ LIST_SRC = ./src/list/add_front.c \
 	  ./src/list/free_exit.c \
 	  ./src/list/list_del.c \
 	  ./src/list/map_values.c \
+	  ./src/list/ft_set_list_b.c \
+	  ./src/list/ft_push_swap.c \
+	  ./src/list/set_map.c \
+	  ./src/list/move_best_element.c \
+	  ./src/list/min_to_top.c \
 	  ./src/lib/ft_abs.c \
 	  ./src/lib/ft_min.c \
 	  ./src/lib/ft_putstr.c \
@@ -82,7 +88,7 @@ B_SRC = ./src/gnl/get_next_line.c \
 
 OBJ = $(LIST_SRC:.c=.o) $(COMMON_SRC:.c=.o)  $(LIS_SRC:.c=.o)  $(SRC:.c=.o)
 
-B_OBJ = $(B_SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o)
+B_OBJ = $(B_SRC:.c=.o) $(COMMON_SRC:.c=.o) $(LIST_SRC:.c=.o) $(LIS_SRC:.c=.o)
 
 INCLUDES_PATH = -I./includes/
 

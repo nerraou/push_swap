@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_dup.c                                           :+:      :+:    :+:   */
+/*   set_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:43:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 12:00:23 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/17 11:17:36 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/17 15:10:46 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "common.h"
+#include "list.h"
+#include "lis.h"
 
-int	is_dup(t_list *list)
+void	set_map(t_list *list_a, t_list *list_b)
 {
-	t_element	*cur;
-	t_element	*next;
+	int	*map;
 
-	cur = list->head;
-	while (cur->next != NULL)
+	map = (int *)malloc(sizeof(int) * list_a->size);
+	if (!map)
+		return ;
+	map = list_to_array(list_a);
+	if (!map)
 	{
-		next = cur->next;
-		while (next)
-		{
-			if (next->data == cur->data)
-				return (1);
-			next = next->next;
-		}
-		cur = cur->next;
+		free(map);
+		free_exit(&list_a, &list_b, 1, "");
 	}
-	return (0);
+	ft_bubbelsort(map, list_a->size);
+	map_values(list_a, map);
 }

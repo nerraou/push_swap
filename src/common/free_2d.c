@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_dup.c                                           :+:      :+:    :+:   */
+/*   free_2d.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:43:38 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/17 12:00:23 by nerraou          ###   ########.fr       */
+/*   Created: 2022/03/17 11:50:00 by nerraou           #+#    #+#             */
+/*   Updated: 2022/03/17 12:01:09 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "common.h"
 
-int	is_dup(t_list *list)
+char	**free_2d(char **str, int size)
 {
-	t_element	*cur;
-	t_element	*next;
+	int	i;
 
-	cur = list->head;
-	while (cur->next != NULL)
+	i = 0;
+	while (i < size)
 	{
-		next = cur->next;
-		while (next)
-		{
-			if (next->data == cur->data)
-				return (1);
-			next = next->next;
-		}
-		cur = cur->next;
+		free(str[i]);
+		i++;
 	}
-	return (0);
+	free(str);
+	return (NULL);
 }

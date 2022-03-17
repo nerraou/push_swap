@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 10:35:04 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/16 17:13:28 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:58:52 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	is_int(const char *str)
 {
-	int	i;
-	int sign;
-	long count;
+	int		i;
+	int		sign;
+	long	count;
 
 	i = 0;
 	sign = 1;

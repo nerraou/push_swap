@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 13:16:34 by nerraou           #+#    #+#             */
-/*   Updated: 2022/03/16 11:55:31 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/03/17 14:29:30 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@ void	sa(t_list *list)
 		return ;
 	tmp = list->head;
 	if (tmp != NULL && tmp->next != NULL)
+	{
 		ft_swap(&tmp->data, &tmp->next->data);
+		ft_swap(&tmp->m_data, &tmp->next->m_data);
+	}
 }
